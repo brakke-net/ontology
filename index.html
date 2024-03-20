@@ -10,7 +10,38 @@
         <p>Hello world!</p>
     </div>
     <script type="text/turtle">
-        ...
+        @base: <https://brakke.net/ontology/> .
+        @prefix owl: <http://www.w3.org/2002/07/owl#> .
+        @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+        @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+        
+        <#Image> a rdfs:Class;
+            rdfs:label "Image"@en;
+            rdfs:comment "An Image class."@en;
+            owl:sameAs foaf:Image;
+            .
+
+        <#depicts> a rdf:Property;
+            rdfs:label "depicts"@en;
+            rdfs:comment "A depicts property."@en;
+            rdfs:domain <#Image>;
+            rdfs:range owl:Thing;
+            .
+        
+        <#thumbnail> a rdf:Property;
+            rdfs:label "thumbnail"@en;
+            rdfs:comment "A thumbnail property."@en;
+            rdfs:domain <#Image>;
+            rdfs:range <#Image>;
+            .
+
+        <#sha1> a rdf:Property;
+            rdfs:label "sha1"@en;
+            rdfs:comment "A sha1 property."@en;
+            rdfs:domain <#Image>;
+            rdfs:range rdfs:Literal;
+            .
+
     </script>
 </body>
 
